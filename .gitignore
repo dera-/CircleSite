@@ -1,0 +1,6 @@
+node_modules
+htdocs/js
+htdocs/download
+js/material.min.js
+js/vue.min.js
+data
