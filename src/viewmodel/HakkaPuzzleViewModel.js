@@ -2,7 +2,9 @@ var siteHeaderTemplate = require('../const/header/SiteHeader'),
   siteDrawerTemplate = require('../const/header/SiteDrawer'),
   siteFooterTemplate = require('../const/footer/SiteFooter'),
   ContentSectionModel = require('../model/ContentSectionModel'),
+  UserAgentUtil = require('../util/UserAgentUtil'),
   contentSectionData = require('../../data/ContentSectionData.json'),
+  userAgentUtil = new UserAgentUtil(),
   contentSectionModelList = contentSectionData.sections.map(function(section) {
     return new ContentSectionModel(section.title, section.description, section.image, section.imagePosition);
   });
@@ -29,15 +31,20 @@ new Vue({
   },
   methods: {
     download: function() {
-      var ua = navigator.userAgent,
-        spAgentList = ['Android', 'Mobile', 'Windows Phone'],
-        applicationUrl;
-      if (spAgentList.some(function(agent){return ua.indexOf(agent) > 0})) {
-        applicationUrl = './download/hakkapuzzle.apk'
+      if (userAgentUtil.isAndroid(navigator.userAgent)) {
+        location.href = './download/hakkapuzzle.apk'
       } else {
-        applicationUrl = './download/hakkapuzzle.jar'
+        location.href = './download/hakkapuzzle.jar'
       }
-      location.href = applicationUrl;
+    }
+  },
+  computed:{
+    isMobile: function() {
+      console.log(navigator.userAgent);
+      return userAgentUtil.isMobile(navigator.userAgent);
+    },
+    isIOs: function() {
+      return userAgentUtil.isIOs(navigator.userAgent);
     }
   }
 });

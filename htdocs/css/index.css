@@ -52,7 +52,6 @@ body .demo-blog {
 }
 
 .demo-blog.mdl-layout .mdl-layout__content {
-  padding-top: 230px;
   position: relative;
   -webkit-overflow-scrolling: touch;
 }
@@ -473,6 +472,10 @@ body .demo-blog {
 
 .blomaga {
   background-image: url('../images/blomaga.png');
+}
+
+.reinforce {
+  background-image: url('../images/reinforce.png');
 }
 
 footer {

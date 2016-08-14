@@ -57,11 +57,30 @@ http://game-icons.net/
       <site-drawer title="崩壊世界部" url="index"> </site-drawer>
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
+        <!-- i-mobile for PC client script -->
+        <div class="mdl-cell mdl-cell--12-col" v-if="isMobile">
+          <script type="text/javascript">
+            imobile_tag_ver = "0.3";
+            imobile_pid = "45736";
+            imobile_asid = "985159";
+            imobile_type = "inline";
+          </script>
+          <script type="text/javascript" src="http://spad.i-mobile.co.jp/script/adssp.js?20110215"></script>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col" v-else>
+          <script type="text/javascript">
+            imobile_pid = "45736";
+            imobile_asid = "981898";
+            imobile_width = 728;
+            imobile_height = 90;
+          </script>
+          <script type="text/javascript" src="http://spdeliver.i-mobile.co.jp/script/ads.js?20101001"></script>
+        </div>
           <!-- サークル概要 -->
           <div class="mdl-cell mdl-cell--12-col mdl-color--blue-grey-100 original-small-card">
             <h4 class="mdl-shadow--4dp">サークル概要</h4>
             <div class="mdl-card__subtitle-text original-abstract-text">
-              AIやシミュレーションに主眼においたゲームを作っていきます
+              AIや戦術シミュレーションに主眼においたゲームを作っていきます
             </div>
           </div>
           <!-- 新着情報 -->
@@ -96,6 +115,25 @@ http://game-icons.net/
               </div>
             </div>
           </template>
+          <!-- i-mobile for PC client script -->
+          <div class="mdl-cell mdl-cell--12-col" v-if="isMobile">
+            <script type="text/javascript">
+              imobile_tag_ver = "0.3";
+              imobile_pid = "45736";
+              imobile_asid = "985160";
+              imobile_type = "inline";
+            </script>
+            <script type="text/javascript" src="http://spad.i-mobile.co.jp/script/adssp.js?20110215"></script>
+          </div>
+          <div class="mdl-cell mdl-cell--12-col" v-else>
+            <script type="text/javascript">
+              imobile_pid = "45736";
+              imobile_asid = "981899";
+              imobile_width = 728;
+              imobile_height = 90;
+            </script>
+            <script type="text/javascript" src="http://spdeliver.i-mobile.co.jp/script/ads.js?20101001"></script>
+          </div>
         </div>
         <site-footer title="同人サークル「崩壊世界部」"></site-footer>
       </main>

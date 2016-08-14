@@ -1,10 +1,12 @@
 var ContentModel = require('../model/ContentModel'),
   CircleInfomationModel = require('../model/CircleInfomationModel'),
+  UserAgentUtil = require('../util/UserAgentUtil'),
   siteHeaderTemplate = require('../const/header/SiteHeader'),
   siteDrawerTemplate = require('../const/header/SiteDrawer'),
   siteFooterTemplate = require('../const/footer/SiteFooter'),
   contentsData = require('../../data/Contents.json'),
   circleInfoData = require('../../data/CircleInfo.json'),
+  userAgentUtil = new UserAgentUtil(),
   contentModelList = contentsData.contents.map(function(content) {
     return new ContentModel(content.title, content.overview, content.url, content.bg_image_class, content.update_time);
   }),
@@ -36,6 +38,11 @@ new Vue({
   methods: {
     jumpToUrl: function(url) {
       location.href = url;
+    }
+  },
+  computed:{
+    isMobile: function(){
+      return userAgentUtil.isMobile(navigator.userAgent);
     }
   }
 });
