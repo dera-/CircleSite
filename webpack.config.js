@@ -3,6 +3,7 @@ module.exports = {
   entry: {
     index: './src/viewmodel/IndexViewModel.js',
     hakkapuzzle: './src/viewmodel/HakkaPuzzleViewModel.js',
+    reinforce: './src/viewmodel/RainforceViewModel.js'
   },
   output: {
     path: __dirname + "/htdocs/js/",
