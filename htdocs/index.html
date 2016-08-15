@@ -101,7 +101,7 @@ http://game-icons.net/
           <template v-for="content in topPageContents">
             <div class="mdl-card mdl-cell mdl-cell--12-col mdl-color--blue-grey-100">
               <div class="mdl-card__media mdl-color-text--grey-50 {{ content.bgImageClass }}" v-on:click="jumpToUrl(content.url)">
-                <h3><a href="entry.html">{{ content.title }}</a></h3>
+                <h3><a href="{{ content.url }}">{{ content.title }}</a></h3>
               </div>
               <div class="mdl-color-text--grey-700 mdl-card__supporting-text" v-if="content.overview.length > 0">
                 <p>{{ content.overview }}</p>
