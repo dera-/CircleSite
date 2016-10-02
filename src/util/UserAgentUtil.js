@@ -1,16 +1,16 @@
-var iOsAgents = ['iphone', 'ipad', 'ipod'],
-  mobileAgents = ['mobile', 'phone', 'blackberry', 'iphone', 'ipod'],
-  UserAgentUtil = function() {};
+const IOS_AGENTS = ['iphone', 'ipad', 'ipod'];
+const MOBILE_AGENTS = ['mobile', 'phone', 'blackberry', 'iphone', 'ipod'];
 
-UserAgentUtil.prototype = {
-  isIOs: function(ua) {
-    return iOsAgents.some(function(agent){return ua.indexOf(agent) !== -1});
-  },
-  isAndroid: function(ua) {
-    return ua.indexOf('android') !== -1;
-  },
-  isMobile: function(ua) {
-    return mobileAgents.some(function(agent){return ua.indexOf(agent) !== -1});
+export default class UserAgentUtil {
+  static isIOs(ua) {
+    return IOS_AGENTS.some(agent => ua.indexOf(agent) !== -1);
   }
-};
-module.exports = UserAgentUtil;
+
+  static isAndroid(ua) {
+    return ua.indexOf('android') !== -1;
+  }
+
+  static isMobile(ua) {
+    return MOBILE_AGENTS.some(agent => ua.indexOf(agent) !== -1);
+  }
+}

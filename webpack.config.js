@@ -1,9 +1,9 @@
 var webpack = require('webpack');
 module.exports = {
   entry: {
-    index: './src/viewmodel/IndexViewModel.js',
-    hakkapuzzle: './src/viewmodel/HakkaPuzzleViewModel.js',
-    reinforce: './src/viewmodel/RainforceViewModel.js'
+    index: './src/viewmodel/page/IndexViewModel.js',
+    hakkapuzzle: './src/viewmodel/page/HakkaPuzzleViewModel.js',
+    reinforce: './src/viewmodel/page/RainforceViewModel.js'
   },
   output: {
     path: __dirname + "/htdocs/js/",
@@ -21,6 +21,7 @@ module.exports = {
   ],
   module: {
     loaders: [
+      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
       { test: /\.json$/, exclude: /node_modules/, loader: "json-loader" }
     ]
   }
